@@ -1,0 +1,13 @@
+{
+  "_copy_without_render": [
+    ".github/workflows/*.yml",
+    ".github/workflows/*.yaml"
+  ],
+  "_template": "gh:oncleben31/cookiecutter-homeassistant-custom-component",
+  "class_name_prefix": "PuregymAttendance",
+  "domain_name": "puregym_attendance",
+  "friendly_name": "PureGym Attendance",
+  "github_user": "nckltcha",
+  "project_name": "puregym-attendance",
+  "version": "0.0.1"
+}
