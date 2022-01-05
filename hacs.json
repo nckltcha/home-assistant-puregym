@@ -2,6 +2,7 @@
   "name": "PureGym Attendance",
   "hacs": "1.6.0",
   "domains": ["sensor"],
+  "description": "Checks the PureGym API for the current number of people in your local gym",
   "iot_class": "Cloud Polling",
   "homeassistant": "2021.12.0"
 }
