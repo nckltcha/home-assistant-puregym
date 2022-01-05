@@ -8,13 +8,13 @@ import async_timeout
 
 TIMEOUT = 10
 
-
 _LOGGER: logging.Logger = logging.getLogger(__package__)
 
 HEADERS = {"Content-type": "application/json; charset=UTF-8"}
 
 
 class PuregymAttendanceApiClient:
+    """Add two numbers"""
     def __init__(
         self, username: str, password: str, session: aiohttp.ClientSession
     ) -> None:
@@ -24,9 +24,9 @@ class PuregymAttendanceApiClient:
         self._session = session
 
     async def async_get_data(self) -> dict:
-        """Get data from the API."""
-        
-        headers = {'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': 'PureGym/1523 CFNetwork/1312 Darwin/21.0.0'}
+        """Add two numbers"""
+        headers = {'Content-Type': 'application/x-www-form-urlencoded',
+                    'User-Agent': 'PureGym/1523 CFNetwork/1312 Darwin/21.0.0'}
         authed = False
         home_gym_id = None
         session = requests.session()
@@ -38,7 +38,8 @@ class PuregymAttendanceApiClient:
             'client_id': 'ro.client'
         }
 
-        response = session.post('https://auth.puregym.com/connect/token', headers=headers, data=data)
+        response = session.post('https://auth.puregym.com/connect/token',
+                headers=headers, data=data)
         if response.status_code == 200:
             auth_json = response.json()
             authed = True
@@ -53,9 +54,9 @@ class PuregymAttendanceApiClient:
         if response.status_code == 200:
             home_gym_id = response.json()['homeGymId']
         else:
-            _LOGGER.error('Response '+str(response.status_code))
-
-        response = session.get(f'https://capi.puregym.com/api/v1/gyms/{str(home_gym_id)}/attendance', headers=headers)
+            _LOGGER.error('Response %s', str(response.status_code))
+        response = session.get(f'https://capi.puregym.com/api/v1/gyms/{str(home_gym_id)}/attendance',
+                headers=headers)
 
         return response.json()['totalPeopleInGym']
 
@@ -65,7 +66,7 @@ class PuregymAttendanceApiClient:
         await self.api_wrapper("patch", url, data={"title": value}, headers=HEADERS)
 
     async def api_wrapper(
-        self, method: str, url: str, data: dict = {}, headers: dict = {}
+        self, method: str, url: str, data: dict = None, headers: dict = None
     ) -> dict:
         """Get information from the API."""
         try:
