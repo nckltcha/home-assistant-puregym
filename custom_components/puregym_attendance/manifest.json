@@ -7,5 +7,6 @@
   "iot_class": "cloud_polling",
   "config_flow": true,
   "codeowners": ["@nckltcha"],
-  "requirements": []
+  "requirements": [],
+  "version": "0.0.1"
 }
