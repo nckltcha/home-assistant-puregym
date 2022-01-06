@@ -57,7 +57,6 @@ class PuregymAttendanceApiClient:
             _LOGGER.error('Response %s', str(response.status_code))
         response = session.get(f'https://capi.puregym.com/api/v1/gyms/{str(home_gym_id)}/attendance',
                 headers=headers)
-
         return response.json()['totalPeopleInGym']
 
     async def async_set_title(self, value: str) -> None:
