@@ -1,23 +1,31 @@
 {
-    "title": "PureGym",
-    "config": {
-      "abort": {
-        "already_configured": "Already configured. Only a single configuration possible."
-      },
-      "error": {
-        "cannot_connect": "Cannot connect. Is the API-Key correct and the internet connection working?",
-        "unknown": "Unknown Error."
-      },
-      "step": {
-        "user": {
-          "data": {
-            "CONF_USERNAME": "Email Address",
-            "CONF_PASSWORD": "Access PIN"
-          },
-          "title": "PureGym",
-          "description": "Enter your email address and access PIN here"
+  "config": {
+    "step": {
+      "user": {
+        "title": "PureGym Attendance",
+        "description": "If you need help with the configuration have a look here: https://github.com/nckltcha/puregym-attendance",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "auth": "Username/Password is wrong."
+    },
+    "abort": {
+      "single_instance_allowed": "Only a single instance is allowed."
+    }
+  },
+  "options": {
+    "step": {
+      "user": {
+        "data": {
+          "binary_sensor": "Binary sensor enabled",
+          "sensor": "Sensor enabled",
+          "switch": "Switch enabled"
         }
       }
     }
   }
-  
+}
