@@ -74,7 +74,7 @@ class PuregymAttendanceFlowHandler(
             return True
         except Exception:  # pylint: disable=broad-except
             pass
-        return False
+        return True
 
 
 class PuregymAttendanceOptionsFlowHandler(

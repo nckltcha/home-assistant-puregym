@@ -32,8 +32,8 @@ class PuregymAttendanceApiClient:
         session = requests.session()
         data = {
             'grant_type': 'password',
-            'username': '',
-            'password': '',
+            'username': self._username,
+            'password': self._passeword,
             'scope': 'pgcapi',
             'client_id': 'ro.client'
         }
